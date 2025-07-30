@@ -6,19 +6,20 @@ Convert Word templates (.docx) to dynamic PDF files with variable replacement.
 
 ```bash
 npm install word-to-pdf-generator
-
-🛠️ Prerequisites
+```
+## 🛠️ Prerequisites
 
 LibreOffice installed on the system and in Windows operating system configure its environment variables
 
 Node.js v16 o superior
 
-💡 Note for Linux:
+## 💡 Note for Linux:
+```bash
 sudo apt-get install libreoffice
-
-🚀 Basic Use
+```
+## 🚀 Basic Use
 1. Generate and save PDF locally
-
+```bash
 const PdfGenerator = require('word-to-pdf-generator');
 const path = require('path');
 
@@ -42,10 +43,10 @@ async function createPdf() {
 }
 
 createPdf();
-
+```
 
 2. Express Server for on-demand generation
-
+```bash
 const express = require('express');
 const PdfGenerator = require('word-to-pdf-generator');
 const app = express();
@@ -69,12 +70,12 @@ app.post('/generate-pdf', async (req, res) => {
 });
 
 app.listen(3000);
+```
 
-
-🔧 Advanced Settings
+## 🔧 Advanced Settings
 
 Customize Delimiters
-
+```bash
 const options = {
   cmdDelimiter: ['[[', ']]'],  //Use [[variable]] instead of {{variable}}
   processLineBreaks: true
@@ -87,17 +88,15 @@ const pdf = await PdfGenerator.generatePdfFromTemplate(
 );
 ```
 
-📝 Template Syntax
+## 📝 Template Syntax
 
 | Type | Example in Word | JavaScript Variables |
 |---|---|---|
 | Plain text | Hello {{name}} | {name: "Ana"} 
 
-
-```
-🚨 Error Handling
+## 🚨 Error Handling
 Recommended code:
-
+```bash
 try {
   // ... PDF generation
 } catch (err) {
@@ -107,9 +106,9 @@ try {
     console.error('Unexpected error:', err);
   }
 }
+```
+## 📂 Recommended Directory Structure
 
-📂 Recommended Directory Structure
-text
 my-project/
 ├── templates/
 │   ├── contract.docx
@@ -118,12 +117,12 @@ my-project/
 ├── node_modules/
 └── app.js
 
-⚠️ Limitations
+## ⚠️ Limitations
 Maximum size: 10MB per template
 
 Format: .docx only (no .doc)
 
-🔄 Typical Workflow
+## 🔄 Typical Workflow
 Design a template in Word with {{variables}}
 
 Define data in JavaScript code
@@ -131,5 +130,3 @@ Define data in JavaScript code
 Generate a PDF in memory or on a file
 
 Distribute via API, email, or storage
-
-```
