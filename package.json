@@ -1,0 +1,39 @@
+{
+  "name": "word-to-pdf-generator",
+  "version": "1.0.0",
+  "description": "Generate PDFs from Word templates with variables",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthoAnton/word-to-pdf-generator.git"
+  },
+  "author": "AnthoAnton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AnthoAnton/word-to-pdf-generator/issues"
+  },
+  "homepage": "https://github.com/AnthoAnton/word-to-pdf-generator#readme",
+  "dependencies": {
+    "docx-templates": "^4.9.0",
+    "libreoffice-convert": "^1.4.0"
+  },
+  "keywords": [
+    "word",
+    "pdf",
+    "template",
+    "conversion",
+    "docx",
+    "generator",
+    "variables",
+    "office",
+    "libreoffice",
+    "word-to-pdf",
+    "word-to-pdf-generator"
+  ]
+}
