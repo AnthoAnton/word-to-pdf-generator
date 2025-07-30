@@ -33,8 +33,8 @@ async function createPdf() {
   };
 
   try {
-    const pdf = await PdfGenerator.generateFromTemplate(template, variables);
-    await PdfGenerator.saveToFile(pdf, output);
+    const pdf = await PdfGenerator.generatePdfFromTemplate(template, variables);
+    await PdfGenerator.savePdfToFile(pdf, output);
     console.log('PDF generated successfully!');
   } catch (err) {
     console.error('Error:', err.message);
@@ -52,7 +52,7 @@ const app = express();
 
 app.post('/generate-pdf', async (req, res) => {
   try {
-    const pdf = await PdfGenerator.generateFromTemplate(
+    const pdf = await PdfGenerator.generatePdfFromTemplate(
       './templates/report.docx',
       req.body.variables
     );
@@ -80,7 +80,7 @@ const options = {
   processLineBreaks: true
 };
 
-const pdf = await PdfGenerator.generateFromTemplate(
+const pdf = await PdfGenerator.generatePdfFromTemplate(
   'template.docx',
   { name: "Example" },
   options
