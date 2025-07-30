@@ -5,7 +5,7 @@ Convert Word templates (.docx) to dynamic PDF files with variable replacement.
 ## 📦 Facility
 
 ```bash
-npm install word-template-to-pdf
+npm install word-to-pdf-generator
 
 🛠️ Prerequisites
 
@@ -19,7 +19,7 @@ sudo apt-get install libreoffice
 🚀 Basic Use
 1. Generate and save PDF locally
 
-const PdfGenerator = require('word-template-to-pdf');
+const PdfGenerator = require('word-to-pdf-generator');
 const path = require('path');
 
 async function createPdf() {
@@ -47,7 +47,7 @@ createPdf();
 2. Express Server for on-demand generation
 
 const express = require('express');
-const PdfGenerator = require('word-template-to-pdf');
+const PdfGenerator = require('word-to-pdf-generator');
 const app = express();
 
 app.post('/generate-pdf', async (req, res) => {
