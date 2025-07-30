@@ -1,23 +1,23 @@
 # 📄 Word Template to PDF Generator
 
-Convierte plantillas de Word (.docx) en archivos PDF dinámicos con reemplazo de variables.
+Convert Word templates (.docx) to dynamic PDF files with variable replacement.
 
-## 📦 Instalación
+## 📦 Facility
 
 ```bash
 npm install word-template-to-pdf
 
-🛠️ Requisitos Previos
+🛠️ Prerequisites
 
-LibreOffice instalado en el sistema
+LibreOffice installed on the system and in Windows operating system configure its environment variables
 
 Node.js v16 o superior
 
-💡 Nota para Linux:
+💡 Note for Linux:
 sudo apt-get install libreoffice
 
-🚀 Uso Básico
-1. Generar y guardar PDF localmente
+🚀 Basic Use
+1. Generate and save PDF locally
 
 const PdfGenerator = require('word-template-to-pdf');
 const path = require('path');
@@ -35,7 +35,7 @@ async function createPdf() {
   try {
     const pdf = await PdfGenerator.generateFromTemplate(template, variables);
     await PdfGenerator.saveToFile(pdf, output);
-    console.log('PDF generado con éxito!');
+    console.log('PDF generated successfully!');
   } catch (err) {
     console.error('Error:', err.message);
   }
@@ -44,7 +44,7 @@ async function createPdf() {
 createPdf();
 
 
-2. Servidor Express para generación bajo demanda
+2. Express Server for on-demand generation
 
 const express = require('express');
 const PdfGenerator = require('word-template-to-pdf');
@@ -71,45 +71,44 @@ app.post('/generate-pdf', async (req, res) => {
 app.listen(3000);
 
 
-🔧 Configuración Avanzada
+🔧 Advanced Settings
 
-Personalizar delimitadores
+Customize Delimiters
 
 const options = {
-  cmdDelimiter: ['[[', ']]'],  // Usar [[variable]] en lugar de {{variable}}
+  cmdDelimiter: ['[[', ']]'],  //Use [[variable]] instead of {{variable}}
   processLineBreaks: true
 };
 
 const pdf = await PdfGenerator.generateFromTemplate(
   'template.docx',
-  { name: "Ejemplo" },
+  { name: "Example" },
   options
 );
 ```
 
-📝 Sintaxis de Plantillas
+📝 Template Syntax
 
-| Tipo | Ejemplo en Word | Variables JavaScript |
+| Type | Example in Word | JavaScript Variables |
 |---|---|---|
-| Texto simple | Hola {{nombre}} | { nombre: "Ana" } |
-| Listas | {{#each items}}• {{this}}{{/each}} | { items: ["uno", "dos"] } |
-| Condicionales | {{#if activo}}Activo{{/if}} | { activo: true } |
+| Plain text | Hello {{name}} | {name: "Ana"} 
+
 
 ```
-🚨 Manejo de Errores
-Código recomendado:
+🚨 Error Handling
+Recommended code:
 
 try {
-  // ... generación de PDF
+  // ... PDF generation
 } catch (err) {
   if (err.name === 'TemplateError') {
-    console.error('Error en plantilla:', err.details);
+    console.error('Template error:', err.details);
   } else {
-    console.error('Error inesperado:', err);
+    console.error('Unexpected error:', err);
   }
 }
 
-📂 Estructura de Directorios Recomendada
+📂 Recommended Directory Structure
 text
 my-project/
 ├── templates/
@@ -119,20 +118,18 @@ my-project/
 ├── node_modules/
 └── app.js
 
-⚠️ Limitaciones
-Tamaño máximo: 10MB por plantilla
+⚠️ Limitations
+Maximum size: 10MB per template
 
-Formato: Solo .docx (no .doc)
+Format: .docx only (no .doc)
 
-Entornos: No compatible con AWS Lambda sin configuración adicional
+🔄 Typical Workflow
+Design a template in Word with {{variables}}
 
-🔄 Flujo de Trabajo Típico
-Diseñar plantilla en Word con {{variables}}
+Define data in JavaScript code
 
-Definir datos en código JavaScript
+Generate a PDF in memory or on a file
 
-Generar PDF en memoria o archivo
-
-Distribuir via API, email o almacenamiento
+Distribute via API, email, or storage
 
 ```
