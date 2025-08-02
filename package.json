@@ -1,6 +1,6 @@
 {
   "name": "word-to-pdf-generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Generate PDFs from Word templates with variables",
   "main": "index.js",
   "directories": {

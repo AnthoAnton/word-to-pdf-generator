@@ -94,29 +94,6 @@ const pdf = await PdfGenerator.generatePdfFromTemplate(
 |---|---|---|
 | Plain text | Hello {{name}} | {name: "Ana"} 
 
-## 🚨 Error Handling
-Recommended code:
-```bash
-try {
-  // ... PDF generation
-} catch (err) {
-  if (err.name === 'TemplateError') {
-    console.error('Template error:', err.details);
-  } else {
-    console.error('Unexpected error:', err);
-  }
-}
-```
-## 📂 Recommended Directory Structure
-
-my-project/
-├── templates/
-│   ├── contract.docx
-│   └── invoice.docx
-├── output/
-├── node_modules/
-└── app.js
-
 ## ⚠️ Limitations
 Maximum size: 10MB per template
 
@@ -130,3 +107,10 @@ Define data in JavaScript code
 Generate a PDF in memory or on a file
 
 Distribute via API, email, or storage
+
+## 💖 Do you like my work? Support me with a coffee!
+If this project has been useful to you or you've enjoyed it, consider buying me a virtual coffee ☕. Any contribution, no matter how small, helps me keep creating and improving!
+
+🔗 Donate via PayPal: https://www.paypal.com/paypalme/anthoanton
+
+Thank you for your support! 🙌
