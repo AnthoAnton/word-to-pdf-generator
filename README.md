@@ -111,6 +111,6 @@ Distribute via API, email, or storage
 ## 💖 Do you like my work? Support me with a coffee!
 If this project has been useful to you or you've enjoyed it, consider buying me a virtual coffee ☕. Any contribution, no matter how small, helps me keep creating and improving!
 
-🔗 Donate via PayPal: https://www.paypal.com/paypalme/anthoanton
+🔗 Donate via [PayPal](https://www.paypal.com/paypalme/anthoanton)
 
 Thank you for your support! 🙌
